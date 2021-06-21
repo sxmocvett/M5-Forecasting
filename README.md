@@ -18,7 +18,7 @@ The original assignment is at [link](https://www.kaggle.com/c/m5-forecasting-acc
 As an example of a forecasting problem in this task we will predict future sales for the state of Wisconsin. As seen in Figure 1, sales value is time series data.
 
 <p align="center">
-  <img src=pictures/target_balance.png?raw=true "Sales value for Wisconsin" width="250" height="370">
+  <img src=pictures/WI_sales.png "Sales value for Wisconsin" width="250" height="370">
 </p>
 
 *<p align="center">Fig. 1 Sales value for Wisconsin</p>* 
@@ -26,7 +26,7 @@ As an example of a forecasting problem in this task we will predict future sales
 <p align="justify">Also the time series is not stationary and has a pronounced seasonality (Figure 2), that imposes additional conditions to prepare data and tune models.</p>
 
 <p align="center">
-  <img src=pictures/missing_values.PNG?raw=true "% Stationarity test">
+  <img src=pictures/stationarity_test.PNG "% Stationarity test">
 </p> 
 
 *<p align="center">Fig. 2 Stationarity test</p>*
@@ -39,7 +39,7 @@ As an example of a forecasting problem in this task we will predict future sales
 <p align="justify">For the final comparison of models the following metrics are used (Figure 3).</p>
 
 <p align="center">
-  <img src=pictures/metrics.PNG?raw=true "Metrics" width="500" height="200">
+  <img src=pictures/metrics.PNG "Metrics" width="500" height="200">
 </p>
 
 *<p align="center">Fig. 3 Сomparative metrics </p>* 
