@@ -15,28 +15,28 @@ The original assignment is at [link](https://www.kaggle.com/c/m5-forecasting-acc
 
 ## Solution description
 
-
-To solve this problem a binary classification problem is considered. As seen in Figure 1, the target variable classes are unbalanced.
+As an example of a forecasting problem in this task we will predict future sales for the state of Wisconsin. As seen in Figure 1, sales value is time series data.
 
 <p align="center">
-  <img src=pictures/target_balance.png?raw=true "Target Class Balance" width="250" height="370">
+  <img src=pictures/target_balance.png?raw=true "Sales value for Wisconsin" width="250" height="370">
 </p>
 
-*<p align="center">Fig. 1 Target class balance (0 – Not looking for job change, 1 – Looking for a job change)</p>* 
+*<p align="center">Fig. 1 Sales value for Wisconsin</p>* 
                 
-<p align="justify">Also some features have from 0% to 40% missing values (Figure 2), that imposes additional conditions to prepare data and tune models.</p>
+<p align="justify">Also the time series is not stationary and has a pronounced seasonality (Figure 2), that imposes additional conditions to prepare data and tune models.</p>
 
 <p align="center">
-  <img src=pictures/missing_values.PNG?raw=true "% Missing values">
+  <img src=pictures/missing_values.PNG?raw=true "% Stationarity test">
 </p> 
 
-*<p align="center">Fig. 2 Missing values (%) </p>*
+*<p align="center">Fig. 2 Stationarity test</p>*
 
 ### Models
-<p align="justify">Models are used in the project: CatBoostClassifier, RandomForestClassifier and VotingClassifier (based on LGBMClassifier, KNNClassifier and LogisticRegression). Taking into account the above-described issues, in addition to tuning the main hyperparameters of models, various combinations of imputation values (SimpleImputer and KNNImputer) and data recovery (SMOTE) strategies are also considered. Automation of the parameters selection for these operations is achieved by GridSearchCV using ColumnTransformer and Pipeline constructors.</p>
+<p align="justify">There are two ways to consider the problem: predict time series values or solve the classic regression problem. Models for the first type: ARIMAX, seasonal ARIMAX, Triple HWES and AutoRegressive model. For the second type: CatBoost and StackingRegressor (where base models are LinearSVR and Ridge, meta model is RandomForestRegressor). Data for them are features, which are generated using TSFRESH library.  
+</p>
 
 ### Metrics
-<p align="justify">Base metric for making choice of the best parameters for each of the models in conditions of class imbalance is "balanced accuracy score". The following metrics are also used for the final comparison of models (Figure 3).</p>
+<p align="justify">For the final comparison of models the following metrics are used (Figure 3).</p>
 
 <p align="center">
   <img src=pictures/metrics.PNG?raw=true "Metrics" width="500" height="200">
