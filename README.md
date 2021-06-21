@@ -18,7 +18,7 @@ The original assignment is at [link](https://www.kaggle.com/c/m5-forecasting-acc
 As an example of a forecasting problem in this task we will predict future sales for the state of Wisconsin. As seen in Figure 1, sales value is time series data.
 
 <p align="center">
-  <img src=pictures/WI_sales.png "Sales value for Wisconsin" width="250" height="370">
+  <img src=pictures/WI_sales.png "Sales value for Wisconsin" width="550" height="370">
 </p>
 
 *<p align="center">Fig. 1 Sales value for Wisconsin</p>* 
